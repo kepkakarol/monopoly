@@ -1,11 +1,8 @@
 #pragma once
 
 #include "Square.h"
-#include "iostream"
-#include <memory>
-#include "Player.h"
 
-class RewardSquare : public Square
+class PunishmentSquare : public Square
 {
 public:
 
@@ -15,3 +12,4 @@ private:
 
     const int money = 500;
 };
+

@@ -5,9 +5,10 @@
 
 class Square;
 
-class Game {
-
+class Game
+{
 public:
+
     Game();
     void startGame();
 
@@ -15,8 +16,8 @@ public:
     std::vector<std::shared_ptr<Player>> players;
 
 private:
-    int throwCube();
 
+    int throwCube();
     void initPlayers();
     void initBoard();
 };

@@ -5,13 +5,15 @@
 #include <memory>
 #include "Player.h"
 
-class StartSquare : public Square{
+class StartSquare : public Square
+{
 public:
 
-    void doAction();
+    void doAction(std::shared_ptr<Player>);
     StartSquare() = default;
+
 private:
+
     const int startMoney = 100;
-    std::shared_ptr<Player> player;
 };
 

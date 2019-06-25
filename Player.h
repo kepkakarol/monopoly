@@ -10,6 +10,6 @@ public:
 
 private:
 
-    int id;
+    int m_id;
     int m_money;
 };

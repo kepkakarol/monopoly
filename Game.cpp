@@ -31,6 +31,9 @@ void Game::startGame()
 
     for(auto player : players)
     {
+
+        //board->makeAMove(player, step);
+
         std::cout << throwCube() << std::endl;
         std::cout << throwCube() << std::endl;
         std::cout << std::endl;
@@ -39,7 +42,7 @@ void Game::startGame()
 
 int Game::throwCube()
 {
-    return rand() % 6;
+    return rand() % 5 + 1;
 }
 
 
