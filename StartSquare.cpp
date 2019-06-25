@@ -3,5 +3,5 @@
 
 void StartSquare::doAction(std::shared_ptr<Player> player)
 {
-    player->earnMoney(startMoney);
+    player->earnMoney(START_MONEY);
 }

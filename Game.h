@@ -18,6 +18,7 @@ public:
 private:
 
     int throwCube();
+    void initCubes();
     void initPlayers();
     void initBoard();
 };

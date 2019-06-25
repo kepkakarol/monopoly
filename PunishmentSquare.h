@@ -10,6 +10,6 @@ public:
 
 private:
 
-    const int money = 500;
+    const int MONEY = 500;
 };
 

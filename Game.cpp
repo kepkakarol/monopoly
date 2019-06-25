@@ -3,20 +3,26 @@
 #include "RewardSquare.h"
 #include "StartSquare.h"
 #include "time.h"
+#include "PunishmentSquare.h"
 
 
 Game::Game()
 {
-    srand(time(0));
-
+    initCubes();
     initPlayers();
     initBoard();
+}
+
+void Game::initCubes()
+{
+    srand(time(0));
 }
 
 void Game::initBoard()
 {
     squares.push_back(std::shared_ptr<Square>(std::make_shared<StartSquare>()));
     squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
+    squares.push_back(std::shared_ptr<Square>(std::make_shared<PunishmentSquare>()));
 }
 
 void Game::initPlayers()

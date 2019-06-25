@@ -3,5 +3,5 @@
 
 void RewardSquare::doAction(std::shared_ptr<Player> player)
 {
-    player->earnMoney(money);
+    player->earnMoney(MONEY);
 }

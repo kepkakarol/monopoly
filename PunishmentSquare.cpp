@@ -2,5 +2,5 @@
 
 void PunishmentSquare::doAction(std::shared_ptr<Player> player)
 {
-    player->payMoney(800);
+    player->payMoney(MONEY);
 }

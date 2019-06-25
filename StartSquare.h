@@ -9,11 +9,11 @@ class StartSquare : public Square
 {
 public:
 
-    void doAction(std::shared_ptr<Player>);
     StartSquare() = default;
+    void doAction(std::shared_ptr<Player>);
 
 private:
 
-    const int startMoney = 100;
+    const int START_MONEY = 100;
 };
 
