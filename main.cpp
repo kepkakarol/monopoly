@@ -2,7 +2,11 @@
 #include "Board.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+
     Board b;
+    b.startGame();
+
     return 0;
+
 }

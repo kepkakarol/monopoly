@@ -1,8 +1,16 @@
 #include "Square.h"
 #include <iostream>
 #include <vector>
+#include <memory>
+
 
 class Board {
 
-    std::vector Squares;
+public:
+    Board();
+
+    void startGame();
+
+    std::vector<Square> squares;
+
 };
