@@ -3,7 +3,7 @@ project(monopoly)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SRCS Square.h Game.h Player.cpp Player.h StartSquare.cpp StartSquare.h RewardSquare.cpp RewardSquare.h PunishmentSquare.cpp PunishmentSquare.h Board.cpp Board.h DepositSquare.cpp DepositSquare.h Cubes.cpp Cubes.hpp)
+set(SRCS Square.h Game.h Player.cpp Player.h StartSquare.cpp StartSquare.h RewardSquare.cpp RewardSquare.h PunishmentSquare.cpp PunishmentSquare.h Board.cpp Board.h DepositSquare.cpp DepositSquare.h Cubes.hpp)
 
 add_executable(main main.cpp Game.cpp ${SRCS})
 
