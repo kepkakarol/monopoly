@@ -4,18 +4,14 @@
 #include "StartSquare.h"
 #include "time.h"
 #include "PunishmentSquare.h"
+#include "Cubes.hpp"
 
 
-Game::Game()
+
+Game::Game(std::shared_ptr<ICubes> p_cubes): m_cubes(std::move(p_cubes))
 {
-    initCubes();
     initPlayers();
     initBoard();
-}
-
-void Game::initCubes()
-{
-    srand(time(0));
 }
 
 void Game::initBoard()
@@ -35,19 +31,12 @@ void Game::startGame()
 
     for(auto player : players)
     {
-
-        auto result = throwCube();
+        auto result = m_cubes->throwCube();
         std::cout << result << std::endl;
         board->makeAMove(player, result);
         std::cout << "Amount of money: " << player->getMoneyAmount() << std::endl;
-
         std::cout << std::endl;
     }
-}
-
-int Game::throwCube()
-{
-    return rand() % 5 + 1;
 }
 
 
