@@ -14,3 +14,7 @@ void Player::earnMoney(int money)
 {
     m_money += money;
 }
+
+int Player::getId() {
+    return m_id;
+}

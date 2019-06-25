@@ -20,9 +20,7 @@ void Game::initCubes()
 
 void Game::initBoard()
 {
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<StartSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<PunishmentSquare>()));
+    board = std::make_shared<Board>();
 }
 
 void Game::initPlayers()
@@ -38,7 +36,7 @@ void Game::startGame()
     for(auto player : players)
     {
 
-        //board->makeAMove(player, step);
+        board->makeAMove(player, throwCube() + throwCube());
 
         std::cout << throwCube() << std::endl;
         std::cout << throwCube() << std::endl;

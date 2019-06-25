@@ -2,6 +2,7 @@
 #include <vector>
 #include <memory>
 #include "Player.h"
+#include "Board.h"
 
 class Square;
 
@@ -12,10 +13,10 @@ public:
     Game();
     void startGame();
 
-    std::vector<std::shared_ptr<Square>> squares;
     std::vector<std::shared_ptr<Player>> players;
 
 private:
+    std::shared_ptr<Board> board;
 
     int throwCube();
     void initCubes();

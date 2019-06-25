@@ -7,6 +7,7 @@ public:
     Player(int id);
     void payMoney(int money);
     void earnMoney(int money);
+    int getId();
 
 private:
 
