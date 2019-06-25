@@ -8,6 +8,7 @@ void StartSquare::doAction(std::shared_ptr<Player> player)
 }
 
 void StartSquare::doPassAction(std::shared_ptr<Player> player) {
-    std::cout<<"passing by start square" <<std::endl;
+    std::cout<<"earning money by passing the start square" <<std::endl;
+    player->earnMoney(START_MONEY);
 }
 
