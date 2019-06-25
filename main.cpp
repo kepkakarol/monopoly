@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Board.h"
+#include "Game.h"
 
 int main() {
 
 
-    Board b;
+    Game b;
     b.startGame();
 
     return 0;
