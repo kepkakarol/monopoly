@@ -36,10 +36,11 @@ void Game::startGame()
     for(auto player : players)
     {
 
-        board->makeAMove(player, throwCube() + throwCube());
+        auto result = throwCube();
+        std::cout << result << std::endl;
+        board->makeAMove(player, result);
+        std::cout << "Amount of money: " << player->getMoneyAmount() << std::endl;
 
-        std::cout << throwCube() << std::endl;
-        std::cout << throwCube() << std::endl;
         std::cout << std::endl;
     }
 }

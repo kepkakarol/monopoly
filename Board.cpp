@@ -11,33 +11,21 @@ Board::Board() {
     initBoard();
 }
 
-void Board::makeAMove(std::shared_ptr<Player> player, int step) {
+void Board::makeAMove(std::shared_ptr<Player> player, int step)
+{
+    performPassingMoves(player, step);
+    performStepMove(player);
+}
 
-    auto postion = playerPosition[player->getId()];
-
+void Board::performPassingMoves(std::shared_ptr<Player> player, int step)
+{
     for(int i = 0; i < step - 1; i++)
     {
         makeAPassMove(player);
     }
-    makeAStepMove(player);
-
-
-    auto newPos = (postion + step) % squares.size();
-
-
-
-    for(auto pos = postion; pos < playerPosition.size() || pos < newPos; pos++ )
-    {
-        if(pos == playerPosition.size())
-            playerPosition[player->getId()] = 0;
-    }
-    squares[newPos]->doAction(player);
-    playerPosition[player->getId()] = newPos;
-
 }
 
-void Board::makeAPassMove(std::shared_ptr<Player> player)
-{
+void Board::makeAPassMove(std::shared_ptr<Player> player) {
     if(isPlayerPassingByStart(player))
     {
 
@@ -45,20 +33,22 @@ void Board::makeAPassMove(std::shared_ptr<Player> player)
     else
     {
         incrementPlayerPostion(player);
-        squares[playerPosition[player->getId()]]->doAction(player);
+        squares[playerPosition[player->getId()]]->doPassAction(player);
     }
 }
 
-void Board::incrementPlayerPostion(std::shared_ptr<Player> &player) {
-    auto newPosition = playerPosition[player->getId()] + 1;
-    playerPosition[player->getId()] = newPosition;
-}
-
-void Board::makeAStepMove(std::shared_ptr<Player> player)
+void Board::performStepMove(std::shared_ptr<Player> player)
 {
     auto newPosition = playerPosition[player->getId()] + 1;
     playerPosition[player->getId()] = newPosition;
     squares[newPosition]->doAction(player);
+}
+
+
+
+void Board::incrementPlayerPostion(std::shared_ptr<Player> &player) {
+    auto newPosition = playerPosition[player->getId()] + 1;
+    playerPosition[player->getId()] = newPosition;
 }
 
 bool Board::isPlayerPassingByStart(std::shared_ptr<Player> sharedPtr)
@@ -70,6 +60,14 @@ void Board::initBoard() {
     squares.push_back(std::shared_ptr<Square>(std::make_shared<StartSquare>()));
     squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
     squares.push_back(std::shared_ptr<Square>(std::make_shared<PunishmentSquare>()));
+    squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
+    squares.push_back(std::shared_ptr<Square>(std::make_shared<PunishmentSquare>()));
+    squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
+    squares.push_back(std::shared_ptr<Square>(std::make_shared<PunishmentSquare>()));
 }
+
+
+
+
 
 

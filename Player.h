@@ -8,7 +8,7 @@ public:
     void payMoney(int money);
     void earnMoney(int money);
     int getId();
-
+    int getMoneyAmount();
 private:
 
     int m_id;
