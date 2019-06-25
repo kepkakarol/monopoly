@@ -32,7 +32,7 @@ void Game::initPlayers()
 void Game::startGame()
 {
     std::cout<<"Game has started"<<std::endl;
-
+    
     for(auto player : players)
     {
 

@@ -1,7 +1,3 @@
-//
-// Created by wojtysia on 25.06.19.
-//
-
 #include "Board.h"
 #include "StartSquare.h"
 #include "RewardSquare.h"
@@ -38,21 +34,18 @@ void Board::performStepMove(std::shared_ptr<Player> player)
     squares[playerPosition[player->getId()]]->doAction(player);
 }
 
+void Board::incrementPlayerPostion(std::shared_ptr<Player> player) 
+{
+    auto playerId = player->getId();
+    auto newPosition = playerPosition[playerId] + 1;
 
-
-void Board::incrementPlayerPostion(std::shared_ptr<Player> player) {
-
-    auto newPosition = playerPosition[player->getId()] + 1;
-
-    if(isPostitionOffBoard(newPosition))
-    {
-        newPosition = 0;
-    }
-
-    playerPosition[player->getId()] = newPosition;
+    playerPosition[playerId] = isPostitionOffBoard(newPosition) ? 0 : newPosition;
 }
 
-bool Board::isPostitionOffBoard(int newPosition) const { return newPosition >= squares.size(); }
+bool Board::isPostitionOffBoard(int newPosition) const 
+{ 
+    return newPosition >= squares.size(); 
+}
 
 void Board::initBoard() {
     squares.push_back(std::shared_ptr<Square>(std::make_shared<StartSquare>()));
