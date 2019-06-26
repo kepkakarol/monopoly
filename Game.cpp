@@ -13,9 +13,8 @@ Game::Game(std::shared_ptr<ICubes> p_cubesThrower, std::shared_ptr<Board> p_boar
 
 }
 
-void Game::addPlayer(std::shared_ptr<Player> player)
-{
-    players.push_back(std::move(player));
+void Game::addPlayer(std::string name) {
+    players.push_back(std::make_shared<Player>(players.size(), name));
 }
 
 void Game::startGame()
@@ -24,6 +23,8 @@ void Game::startGame()
 
     for(auto player : players)
     {
+        std::cout << player->getName() << " " << "making move" << std::endl;
+
         auto result = m_cubes->throwCube();
         std::cout << result << std::endl;
         m_board->makeAMove(player, result);
@@ -31,5 +32,7 @@ void Game::startGame()
         std::cout << std::endl;
     }
 }
+
+
 
 

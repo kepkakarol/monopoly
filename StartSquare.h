@@ -10,7 +10,7 @@ class StartSquare : public Square
 public:
 
     StartSquare() = default;
-    void doAction(std::shared_ptr<Player>);
+    void doStepAction(std::shared_ptr<Player>);
     void doPassAction(std::shared_ptr<Player> player);
 private:
 

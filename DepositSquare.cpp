@@ -5,7 +5,7 @@ DepositSquare::DepositSquare():m_savedMoney(0)
 
 }
 
-void DepositSquare::doAction(std::shared_ptr<Player> player) {
+void DepositSquare::doStepAction(std::shared_ptr<Player> player) {
     std::cout<<"stepping on deposit square; "  << "+" << m_savedMoney << std::endl;
     player->earnMoney(m_savedMoney);
     m_savedMoney = 0;

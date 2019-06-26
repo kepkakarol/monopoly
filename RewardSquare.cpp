@@ -1,7 +1,7 @@
 
 #include "RewardSquare.h"
 
-void RewardSquare::doAction(std::shared_ptr<Player> player)
+void RewardSquare::doStepAction(std::shared_ptr<Player> player)
 {
     std::cout<<"stepping on reward square; " << "+" << MONEY << std::endl;
     player->earnMoney(MONEY);

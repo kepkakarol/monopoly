@@ -1,6 +1,6 @@
 #include "PunishmentSquare.h"
 
-void PunishmentSquare::doAction(std::shared_ptr<Player> player)
+void PunishmentSquare::doStepAction(std::shared_ptr<Player> player)
 {
     std::cout<<"stepping on punishment square; " << "-" << MONEY <<std::endl;
     player->payMoney(MONEY);

@@ -1,7 +1,7 @@
 
 #include "StartSquare.h"
 
-void StartSquare::doAction(std::shared_ptr<Player> player)
+void StartSquare::doStepAction(std::shared_ptr<Player> player)
 {
     std::cout<<"stepping on start square" <<std::endl;
     player->earnMoney(START_MONEY);

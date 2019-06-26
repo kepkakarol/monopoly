@@ -23,9 +23,9 @@ private:
 
 
     void incrementPlayerPostion(std::shared_ptr<Player> player);
-    void performPassingMoves(std::shared_ptr<Player> sharedPtr, int step);
-    void makeAPassMove(std::shared_ptr<Player> sharedPtr);
-    void performStepMove(std::shared_ptr<Player> sharedPtr);
+    void performPassingMoves(std::shared_ptr<Player> player, int step);
+    void makeAPassMove(std::shared_ptr<Player> player);
+    void performStepMove(std::shared_ptr<Player> player);
     bool isPostitionOffBoard(int newPosition) const;
 };
 

@@ -31,7 +31,7 @@ void Board::makeAPassMove(std::shared_ptr<Player> player)
 void Board::performStepMove(std::shared_ptr<Player> player)
 {
     incrementPlayerPostion(player);
-    squares[playerPosition[player->getId()]]->doAction(player);
+    squares[playerPosition[player->getId()]]->doStepAction(player);
 }
 
 void Board::incrementPlayerPostion(std::shared_ptr<Player> player) 

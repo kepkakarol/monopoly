@@ -8,7 +8,7 @@ class DepositSquare : public Square
 public:
     DepositSquare();
 
-    virtual void doAction(std::shared_ptr<Player> player);
+    virtual void doStepAction(std::shared_ptr<Player> player);
     virtual void doPassAction(std::shared_ptr<Player> player);
 
 private:

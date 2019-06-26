@@ -6,11 +6,9 @@
 
 int main() {
 
-    auto board = std::make_shared<Board>();
-
-    Game b(std::make_shared<Cubes>(), board);
-    b.addPlayer(std::make_shared<Player>(0));
-    b.addPlayer(std::make_shared<Player>(1));
+    Game b(std::make_shared<Cubes>(), std::make_shared<Board>());
+    b.addPlayer("Ala");
+    b.addPlayer("Krzys");
     b.startGame();
 
     return 0;

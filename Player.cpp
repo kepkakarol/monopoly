@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(int _id) : m_id(_id), m_money(2000)
+Player::Player(int _id, std::string name) : m_id(_id), m_money(2000), m_name(name)
 {
 
 }
@@ -15,10 +15,18 @@ void Player::earnMoney(int money)
     m_money += money;
 }
 
-int Player::getId() {
+const int Player::getId()
+{
     return m_id;
 }
 
-int Player::getMoneyAmount() {
+const int Player::getMoneyAmount()
+{
     return m_money;
 }
+
+const std::string Player::getName()
+{
+    return m_name;
+}
+
