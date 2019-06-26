@@ -1,12 +1,12 @@
 
 #include "RewardSquare.h"
 
-void RewardSquare::doStepAction(std::shared_ptr<Player> player)
+void RewardSquare::doStepAction(Player &player)
 {
     std::cout<<"stepping on reward square; " << "+" << MONEY << std::endl;
-    player->earnMoney(MONEY);
+    player.earnMoney(MONEY);
 }
 
-void RewardSquare::doPassAction(std::shared_ptr<Player> player) {
+void RewardSquare::doPassAction(Player &player) {
     std::cout<<"passing by reward square" <<std::endl;
 }

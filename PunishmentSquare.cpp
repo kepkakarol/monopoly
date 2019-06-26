@@ -1,11 +1,13 @@
 #include "PunishmentSquare.h"
+#include "Player.h"
 
-void PunishmentSquare::doStepAction(std::shared_ptr<Player> player)
+
+void PunishmentSquare::doStepAction(Player &player)
 {
     std::cout<<"stepping on punishment square; " << "-" << MONEY <<std::endl;
-    player->payMoney(MONEY);
+    player.payMoney(MONEY);
 }
 
-void PunishmentSquare::doPassAction(std::shared_ptr<Player> player) {
+void PunishmentSquare::doPassAction(Player &player) {
     std::cout<<"passing by punishment square" <<std::endl;
 }

@@ -18,6 +18,10 @@ public:
     std::vector<std::shared_ptr<Player>> players;
 
 private:
+
     std::shared_ptr<Board> m_board;
     std::shared_ptr<ICubes> m_cubes;
+    const int ROUNDS = 3;
+
+    void playRound() const;
 };

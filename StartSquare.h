@@ -10,8 +10,8 @@ class StartSquare : public ISquare
 public:
 
     StartSquare() = default;
-    void doStepAction(std::shared_ptr<Player>);
-    void doPassAction(std::shared_ptr<Player> player);
+    void doStepAction(Player &);
+    void doPassAction(Player &player);
 private:
 
     const int START_MONEY = 100;
