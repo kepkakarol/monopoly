@@ -22,7 +22,10 @@ int throwCube() override
        throw1 += onceThrow();
        throw2 += onceThrow();
     }
-    return throw1 + throw2;
+    auto result = throw1 + throw2;
+
+    std::cout << "Rolled " << result << std::endl;
+    return result;
 }
 private:
     int onceThrow()

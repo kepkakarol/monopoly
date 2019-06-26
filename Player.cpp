@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Iterator.h"
 
 Player::Player(Iterator moveIterator, std::string name):m_positionOnBoard(moveIterator), m_name(name), m_money(2000) {
 
@@ -24,9 +25,11 @@ const std::string Player::getName()
     return m_name;
 }
 
-void Player::makeMove(int step) {
-    if(isBankrupt()) return;
+void Player::makeMove(int step)
+{
+    std::cout << getName() << " " << "making move" << std::endl;
 
+    if(isBankrupt()) return;
     performPassingMoves(step);
     performStepMove();
 }
@@ -36,7 +39,6 @@ void Player::performPassingMoves(int step)
     for(auto i = 0; i < step - 1; i++)
     {
         m_positionOnBoard++;
-        (*m_positionOnBoard).doPassAction(*this);
         (*m_positionOnBoard).doPassAction(*this);
     }
 }
