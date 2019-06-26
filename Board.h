@@ -21,9 +21,7 @@ public:
 private:
 
     void initBoard();
-
     std::vector<std::shared_ptr<ISquare>> squares;
 };
-
 
 
