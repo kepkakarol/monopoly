@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Iterator.h"
 
 Player::Player(Iterator moveIterator, std::string name):m_positionOnBoard(moveIterator), m_name(name), m_money(2000) {
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Board.h"
+#include "Iterator.h"
 
 class Player {
 
@@ -14,14 +15,11 @@ public:
     void makeMove(int step);
 private:
 
-    int m_id;
     int m_money;
     std::string m_name;
     Iterator m_positionOnBoard;
 
     void performPassingMoves(int step);
-
     void performStepMove();
-
     bool isBankrupt();
 };

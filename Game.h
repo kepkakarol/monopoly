@@ -24,4 +24,5 @@ private:
     const int ROUNDS = 3;
 
     void playRound() const;
+    void printCurrentGameState(std::shared_ptr<Player> &player, int result) const;
 };

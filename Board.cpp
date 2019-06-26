@@ -3,6 +3,7 @@
 #include "RewardSquare.h"
 #include "PunishmentSquare.h"
 #include "DepositSquare.h"
+#include "Iterator.h"
 
 Board::Board() {
     initBoard();

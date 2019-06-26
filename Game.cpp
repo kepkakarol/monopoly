@@ -23,22 +23,27 @@ void Game::startGame()
 
     for(auto roundNb = 0; roundNb < ROUNDS; roundNb++)
     {
-        std::cout <<"Round nb "<<roundNb <<std::endl;
+        std::cout << "Round nb "<< roundNb + 1 << std::endl;
         playRound();
     }
 
 }
 
 void Game::playRound() const {
-    for (auto player : players) {
-        std::cout << player->getName() << " " << "making move" << std::endl;
-
+    for (auto player : players)
+    {
         auto result = m_cubes->throwCube();
-        std::cout << result << std::endl;
         player->makeMove(result);
-        std::cout << "Amount of money: " << player->getMoneyAmount() << std::endl;
-        std::cout << std::endl;
+        printCurrentGameState(player, result);
     }
+}
+
+void Game::printCurrentGameState(std::shared_ptr<Player> &player, int result) const
+{
+    std::cout << player->getName() << " " << "making move" << std::endl;
+    std::cout << result << std::endl;
+    std::cout << "Amount of money: " << player->getMoneyAmount() << std::endl;
+    std::cout << std::endl;
 }
 
 
