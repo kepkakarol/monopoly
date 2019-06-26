@@ -3,9 +3,11 @@
 #include "Player.h"
 
 
-class Square
+class ISquare
 {
 public:
+
     virtual void doStepAction(std::shared_ptr<Player> player) = 0;
     virtual void doPassAction(std::shared_ptr<Player> player) = 0;
+
 };

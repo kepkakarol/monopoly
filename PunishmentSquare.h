@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Square.h"
+#include "ISquare.h"
 #include <iostream>
 
-class PunishmentSquare : public Square
+class PunishmentSquare : public ISquare
 {
 public:
 

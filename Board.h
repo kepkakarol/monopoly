@@ -4,7 +4,7 @@
 #include <memory>
 #include <memory>
 #include <map>
-#include "Square.h"
+#include "ISquare.h"
 
 
 
@@ -19,7 +19,7 @@ private:
     void initBoard();
 
     std::map<int,int> playerPosition;
-    std::vector<std::shared_ptr<Square>> squares;
+    std::vector<std::shared_ptr<ISquare>> squares;
 
 
     void incrementPlayerPostion(std::shared_ptr<Player> player);

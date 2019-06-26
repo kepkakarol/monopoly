@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Square.h"
+#include "ISquare.h"
 #include "iostream"
 #include <memory>
 #include "Player.h"
 
-class RewardSquare : public Square
+class RewardSquare : public ISquare
 {
 public:
 

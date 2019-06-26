@@ -3,7 +3,7 @@
 #include <memory>
 #include "Player.h"
 
-class Square;
+class ISquare;
 class ICubes;
 class Board;
 

@@ -48,13 +48,13 @@ bool Board::isPostitionOffBoard(int newPosition) const
 }
 
 void Board::initBoard() {
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<StartSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<DepositSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<DepositSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<RewardSquare>()));
-    squares.push_back(std::shared_ptr<Square>(std::make_shared<PunishmentSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<StartSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<RewardSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<DepositSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<RewardSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<DepositSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<RewardSquare>()));
+    squares.push_back(std::shared_ptr<ISquare>(std::make_shared<PunishmentSquare>()));
 }
 
 
