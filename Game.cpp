@@ -2,38 +2,31 @@
 #include "Player.h"
 #include "RewardSquare.h"
 #include "StartSquare.h"
-#include "time.h"
 #include "PunishmentSquare.h"
 #include "Cubes.hpp"
+#include "Board.h"
 
 
 
-Game::Game(std::shared_ptr<ICubes> p_cubes): m_cubes(std::move(p_cubes))
+Game::Game(std::shared_ptr<ICubes> p_cubesThrower, std::shared_ptr<Board> p_board) : m_cubes(std::move(p_cubesThrower)), m_board(std::move(p_board))
 {
-    initPlayers();
-    initBoard();
+
 }
 
-void Game::initBoard()
+void Game::addPlayer(std::shared_ptr<Player> player)
 {
-    board = std::make_shared<Board>();
-}
-
-void Game::initPlayers()
-{
-    players.push_back(std::make_shared<Player>(0));
-    players.push_back(std::make_shared<Player>(1));
+    players.push_back(std::move(player));
 }
 
 void Game::startGame()
 {
     std::cout<<"Game has started"<<std::endl;
-    
+
     for(auto player : players)
     {
         auto result = m_cubes->throwCube();
         std::cout << result << std::endl;
-        board->makeAMove(player, result);
+        m_board->makeAMove(player, result);
         std::cout << "Amount of money: " << player->getMoneyAmount() << std::endl;
         std::cout << std::endl;
     }
