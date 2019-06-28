@@ -3,7 +3,7 @@ project(monopoly)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SRCS ISquare.h Game.h Player.cpp Player.h StartSquare.cpp StartSquare.h RewardSquare.cpp RewardSquare.h PunishmentSquare.cpp PunishmentSquare.h Board.cpp Board.h DepositSquare.cpp DepositSquare.h Cubes.hpp Iterator.cpp Iterator.h MansionSquare.cpp MansionSquare.h TransactionDecider.cpp TransactionDecider.h GreedyTransactionDecider.cpp GreedyTransactionDecider.h RandomTransactionDecider.cpp RandomTransactionDecider.h Piece.h HumanTransactionDecider.cpp HumanTransactionDecider.h)
+set(SRCS ISquare.h Game.h Player.cpp Player.h StartSquare.cpp StartSquare.h RewardSquare.cpp RewardSquare.h PunishmentSquare.cpp PunishmentSquare.h Board.cpp Board.h DepositSquare.cpp DepositSquare.h Cubes.hpp Iterator.cpp Iterator.h MansionSquare.cpp MansionSquare.h TransactionDecider.cpp TransactionDecider.h GreedyTransactionDecider.cpp GreedyTransactionDecider.h RandomTransactionDecider.cpp RandomTransactionDecider.h Piece.h HumanTransactionDecider.cpp HumanTransactionDecider.h RandomSquare.cpp RandomSquare.h PrisonSquare.cpp PrisonSquare.h BlackHoleSquare.cpp BlackHoleSquare.h)
 
 add_executable(main main.cpp Game.cpp ${SRCS})
 
