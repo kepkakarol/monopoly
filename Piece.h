@@ -13,6 +13,7 @@ public:
     virtual void payMoney(int money) = 0;
     virtual void earnMoney(int money) = 0;
     virtual bool buyMantion(int) = 0;
+    virtual void imprisonPlayer(int) = 0;
 
     //TODO remove it
     virtual const std::string getName() = 0;

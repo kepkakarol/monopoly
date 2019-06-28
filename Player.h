@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include "Board.h"
 #include "Iterator.h"
@@ -16,10 +17,14 @@ public:
     const int getMoneyAmount();
     const std::string getName() override;
     void makeMove(int step);
-
+    void imprisonPlayer(int) override;
+    bool isWaiting();
+    void decrementWaitingCounter();
 private:
 
     int m_money;
+    int roundsToWait = 0;
+
     std::string m_name;
     Iterator m_positionOnBoard;
     std::shared_ptr<TransactionDecider> buyDecider;

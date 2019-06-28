@@ -4,6 +4,8 @@
 
 #include "ISquare.h"
 
+class Player;
+
 class PrisonSquare : public ISquare
 {
 public:

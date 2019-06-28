@@ -32,6 +32,13 @@ const std::string Player::getName()
 
 void Player::makeMove(int step)
 {
+    if(isWaiting())
+    {
+        std::cout << getName() << " " << "I am staying in prison" << std::endl;
+        decrementWaitingCounter();
+        return;
+    }
+
     std::cout << getName() << " " << "making move" << std::endl;
 
     if(isBankrupt()) return;
@@ -67,6 +74,21 @@ bool Player::isBankrupt()
 bool Player::buyMantion(int price)
 {
     return buyDecider->shouldBuy(m_money, price);
+}
+
+bool Player::isWaiting()
+{
+    return roundsToWait > 0;
+}
+
+void Player::imprisonPlayer(const int rounds)
+{
+    roundsToWait = rounds;
+}
+
+void Player::decrementWaitingCounter()
+{
+    roundsToWait--;
 }
 
 
