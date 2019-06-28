@@ -10,5 +10,5 @@ std::unique_ptr<Game> MonopolyGameFactory::createCosmoGame()
 
 std::unique_ptr<Game> MonopolyGameFactory::createRegularGame()
 {
-    return std::make_unique<Game>(std::make_shared<Cubes>(), factory.createCosmoBoard());
+    return std::make_unique<Game>(std::make_shared<Cubes>(), factory.createRegularBoard());
 }

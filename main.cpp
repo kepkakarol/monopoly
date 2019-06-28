@@ -1,8 +1,5 @@
-#pragma once
-
 #include <iostream>
 #include "Board.h"
-#include "Cubes.hpp"
 #include "RandomTransactionDecider.h"
 #include "GreedyTransactionDecider.h"
 #include "HumanTransactionDecider.h"
@@ -10,8 +7,8 @@
 #include "MonopolyGameFactory.h"
 
 
-int main() {
-
+int main()
+{
     MonopolyGameFactory factory{};
 
     auto game = factory.createCosmoGame();
@@ -22,5 +19,4 @@ int main() {
     game->startGame();
 
     return 0;
-
 }
