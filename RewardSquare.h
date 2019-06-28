@@ -9,8 +9,8 @@ class RewardSquare : public ISquare
 {
 public:
 
-    void doStepAction(Player &);
-    void doPassAction(Player &player);
+    void doStepAction(std::shared_ptr<Piece>);
+    void doPassAction(std::shared_ptr<Piece> player);
 
 private:
 

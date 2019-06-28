@@ -12,8 +12,10 @@ class Game
 public:
 
     Game(std::shared_ptr<ICubes> p_cubesThrower, std::shared_ptr<Board> board);
+
     void startGame();
     void addPlayer(std::string);
+    void addPlayer(std::string name, std::shared_ptr<TransactionDecider>);
 
     std::vector<std::shared_ptr<Player>> players;
 

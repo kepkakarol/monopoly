@@ -1,13 +1,13 @@
 #pragma once
 #include <memory>
 
-class Player;
+class Piece;
 
 class ISquare
 {
 public:
 
-    virtual void doStepAction(Player &player) = 0;
-    virtual void doPassAction(Player &player) = 0;
+    virtual void doStepAction(std::shared_ptr<Piece> player) = 0;
+    virtual void doPassAction(std::shared_ptr<Piece> player) = 0;
 
 };

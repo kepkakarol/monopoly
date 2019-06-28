@@ -8,8 +8,8 @@ class DepositSquare : public ISquare
 public:
     DepositSquare();
 
-    virtual void doStepAction(Player &player);
-    virtual void doPassAction(Player &player);
+    virtual void doStepAction(std::shared_ptr<Piece> player);
+    virtual void doPassAction(std::shared_ptr<Piece> player);
 
 private:
     int m_savedMoney;

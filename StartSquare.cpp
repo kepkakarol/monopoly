@@ -1,15 +1,15 @@
 
 #include "StartSquare.h"
 
-void StartSquare::doStepAction(Player &player)
+void StartSquare::doStepAction(std::shared_ptr<Piece> player)
 {
     std::cout<<"stepping on start square; " << "+" << START_MONEY << std::endl;
-    player.earnMoney(START_MONEY);
+    player->earnMoney(START_MONEY);
 }
 
-void StartSquare::doPassAction(Player &player)
+void StartSquare::doPassAction(std::shared_ptr<Piece> player)
 {
     std::cout<<"passing by starting square; " << "+" << START_MONEY << std::endl;
-    player.earnMoney(START_MONEY);
+    player->earnMoney(START_MONEY);
 }
 

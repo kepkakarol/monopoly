@@ -5,7 +5,7 @@
 #include "PunishmentSquare.h"
 #include "Cubes.hpp"
 #include "Board.h"
-
+#include "RandomTransactionDecider.h"
 
 
 Game::Game(std::shared_ptr<ICubes> p_cubesThrower, std::shared_ptr<Board> p_board) : m_cubes(std::move(p_cubesThrower)), m_board(std::move(p_board))
@@ -14,7 +14,12 @@ Game::Game(std::shared_ptr<ICubes> p_cubesThrower, std::shared_ptr<Board> p_boar
 }
 
 void Game::addPlayer(std::string name) {
-    players.push_back(std::make_shared<Player>(m_board->getIterator(), name));
+    players.push_back(std::make_shared<Player>(m_board->getIterator(), std::make_shared<RandomTransactionDecider>(), name));
+}
+
+void Game::addPlayer(std::string name, std::shared_ptr<TransactionDecider> decider)
+{
+    players.push_back(std::make_shared<Player>(m_board->getIterator(),std::move(decider), name));
 }
 
 void Game::startGame()

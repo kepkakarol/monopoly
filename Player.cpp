@@ -1,9 +1,14 @@
 #include "Player.h"
 #include "Iterator.h"
 
-Player::Player(Iterator moveIterator, std::string name):m_positionOnBoard(moveIterator), m_name(name), m_money(2000) {
+Player::Player(Iterator moveIterator, std::shared_ptr<TransactionDecider> decider, std::string name) :m_positionOnBoard(moveIterator),
+                                                                                              m_name(name),
+                                                                                              m_money(2000),
+                                                                                              buyDecider(std::move(decider))
+{
 
 }
+
 
 void Player::payMoney(int money)
 {
@@ -39,14 +44,14 @@ void Player::performPassingMoves(int step)
     for(auto i = 0; i < step - 1; i++)
     {
         m_positionOnBoard++;
-        (*m_positionOnBoard).doPassAction(*this);
+        (*m_positionOnBoard).doPassAction(shared_from_this());
     }
 }
 
 void Player::performStepMove()
 {
     m_positionOnBoard++;
-    (*m_positionOnBoard).doStepAction(*this);
+    (*m_positionOnBoard).doStepAction(shared_from_this());
 }
 
 bool Player::isBankrupt()
@@ -57,7 +62,11 @@ bool Player::isBankrupt()
         return true;
     }
     return false;
+}
 
+bool Player::buyMantion(int price)
+{
+    return buyDecider->shouldBuy(m_money, price);
 }
 
 

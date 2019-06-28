@@ -7,8 +7,8 @@ class PunishmentSquare : public ISquare
 {
 public:
 
-    void doStepAction(Player &) override;
-    void doPassAction(Player &player) override;
+    void doStepAction(std::shared_ptr<Piece>) override;
+    void doPassAction(std::shared_ptr<Piece> player) override;
 
 private:
 
