@@ -1,3 +1,5 @@
+#pragma once
+
 class ICubes
 {
 public:
@@ -27,8 +29,8 @@ int throwCube() override
     std::cout << "Rolled " << result << std::endl;
     return result;
 }
-private:
-    int onceThrow()
+protected:
+    virtual int onceThrow()
     {
         return rand() % 5 + 1;
     }

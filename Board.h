@@ -13,15 +13,16 @@ class Iterator;
 
 
 class Board {
+
 public:
 
-    Board();
+    Board(std::vector<std::shared_ptr<ISquare>>);
     Iterator getIterator();
 
 private:
 
-    void initBoard();
     std::vector<std::shared_ptr<ISquare>> squares;
+
 };
 
 

@@ -10,6 +10,7 @@
 class Player : public std::enable_shared_from_this<Player>, public Piece {
 
 public:
+
     Player(Iterator moveIterator, std::shared_ptr<TransactionDecider>, std::string name);
     void payMoney(int money) override;
     void earnMoney(int money) override;
@@ -17,9 +18,10 @@ public:
     const int getMoneyAmount();
     const std::string getName() override;
     void makeMove(int step);
-    void imprisonPlayer(int) override;
+    void imprison(int) override;
     bool isWaiting();
     void decrementWaitingCounter();
+
 private:
 
     int m_money;

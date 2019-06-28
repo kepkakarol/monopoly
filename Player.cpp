@@ -2,9 +2,9 @@
 #include "Iterator.h"
 
 Player::Player(Iterator moveIterator, std::shared_ptr<TransactionDecider> decider, std::string name) :m_positionOnBoard(moveIterator),
-                                                                                              m_name(name),
-                                                                                              m_money(2000),
-                                                                                              buyDecider(std::move(decider))
+                                                                                                      m_name(name),
+                                                                                                      m_money(2000),
+                                                                                                      buyDecider(std::move(decider))
 {
 
 }
@@ -39,9 +39,9 @@ void Player::makeMove(int step)
         return;
     }
 
-    std::cout << getName() << " " << "making move" << std::endl;
-
     if(isBankrupt()) return;
+
+    std::cout << getName() << " " << "making move" << std::endl;
     performPassingMoves(step);
     performStepMove();
 }
@@ -81,7 +81,7 @@ bool Player::isWaiting()
     return roundsToWait > 0;
 }
 
-void Player::imprisonPlayer(const int rounds)
+void Player::imprison(const int rounds)
 {
     roundsToWait = rounds;
 }

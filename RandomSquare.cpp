@@ -37,13 +37,6 @@ void RandomSquare::doPassAction(std::shared_ptr<Piece> player)
 
 std::shared_ptr<ISquare> RandomSquare::randomizeSquare()
 {
-    const int RANGE = 3;
-
-    auto sqNumber = rand()%RANGE;
-
-    if(RANGE <= squares.size())
-        return squares[sqNumber];
-    else
-        return squares[0];
+    return squares[rand()%squares.size()];
 }
 

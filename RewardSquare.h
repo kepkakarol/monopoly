@@ -15,4 +15,5 @@ public:
 private:
 
     const int MONEY = 500;
+
 };
